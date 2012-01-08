@@ -2,10 +2,9 @@
 
 Name:		edgar
 Summary:	2D Platform Game
-Version:	0.94
+Version:	0.95
 Release:	%mkrel 1
 Source:		%{name}-%{version}-%{rel}.tar.gz
-Patch0:		edgar-0.94-linking.patch
 Url:		http://www.parallelrealities.co.uk/projects/edgar.php
 Group:		Games/Adventure
 License:	GPLv2
@@ -36,7 +35,6 @@ This package contains official level set for Edgar.
 
 %prep
 %setup -q
-%patch0 -p1 -b .lm
 
 %build
 %make VERSION=%{version} RELEASE=%{rel}
