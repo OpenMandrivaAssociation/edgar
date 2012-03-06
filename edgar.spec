@@ -1,8 +1,8 @@
-%define rel 1
+%define rel 2
 
 Name:		edgar
 Summary:	2D Platform Game
-Version:	0.97
+Version:	0.98
 Release:	%mkrel 1
 Source:		%{name}-%{version}-%{rel}.tar.gz
 Url:		http://www.parallelrealities.co.uk/projects/edgar.php
