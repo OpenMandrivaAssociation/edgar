@@ -1,8 +1,8 @@
-%define rel 2
+%define rel 1
 
 Name:		edgar
 Summary:	2D Platform Game
-Version:	0.98
+Version:	0.99
 Release:	%mkrel 1
 Source:		%{name}-%{version}-%{rel}.tar.gz
 Url:		http://www.parallelrealities.co.uk/projects/edgar.php
@@ -55,14 +55,12 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications \
 %__rm -rf %{buildroot}
 
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc doc/*
 %{_gamesbindir}/*
 %{_datadir}/applications/*.desktop
 %{_iconsdir}/hicolor/*/apps/*
 
 %files data
-%defattr(-,root,root)
 %dir %{_gamesdatadir}/%{name}
 %{_gamesdatadir}/%{name}/*
 
