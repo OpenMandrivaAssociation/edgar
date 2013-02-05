@@ -2,8 +2,8 @@
 
 Name:		edgar
 Summary:	2D Platform Game
-Version:	1.01
-Release:	%mkrel 1
+Version:	1.06
+Release:	1
 Source:		%{name}-%{version}-%{rel}.tar.gz
 Url:		http://www.parallelrealities.co.uk/projects/edgar.php
 Group:		Games/Adventure
@@ -40,7 +40,6 @@ This package contains official level set for Edgar.
 %make VERSION=%{version} RELEASE=%{rel}
 
 %install
-%__rm -rf %{buildroot}
 %makeinstall_std
 
 %find_lang %{name}
@@ -49,10 +48,7 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications \
 	--add-category="AdventureGame" \
 	%{buildroot}%{_datadir}/applications/edgar.desktop
 
-%__rm -rf %{buildroot}%{_datadir}/doc
-
-%clean
-%__rm -rf %{buildroot}
+rm -rf %{buildroot}%{_datadir}/doc
 
 %files -f %{name}.lang
 %doc doc/*
@@ -63,36 +59,4 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications \
 %files data
 %dir %{_gamesdatadir}/%{name}
 %{_gamesdatadir}/%{name}/*
-
-
-
-%changelog
-* Wed May 23 2012 Andrey Bondrov <abondrov@mandriva.org> 1.01-1mdv2011.0
-+ Revision: 800241
-- New version 1.01
-
-* Tue Apr 24 2012 Andrey Bondrov <abondrov@mandriva.org> 1.00-1
-+ Revision: 793103
-- New version 1.00
-
-* Fri Apr 06 2012 Andrey Bondrov <abondrov@mandriva.org> 0.99-1
-+ Revision: 789577
-- New version 0.99-1
-
-* Tue Mar 06 2012 Andrey Bondrov <abondrov@mandriva.org> 0.98-1
-+ Revision: 782360
-- New version 0.98-2
-
-* Fri Feb 10 2012 Andrey Bondrov <abondrov@mandriva.org> 0.97-1
-+ Revision: 772419
-- New version 0.97
-
-* Sun Jan 08 2012 Andrey Bondrov <abondrov@mandriva.org> 0.95-1
-+ Revision: 758661
-- New version 0.95
-
-* Mon Dec 12 2011 Andrey Bondrov <abondrov@mandriva.org> 0.94-1
-+ Revision: 740534
-- Add patch0 to fix linking
-- imported package edgar
 
