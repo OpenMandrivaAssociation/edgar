@@ -3,7 +3,7 @@
 Name:		edgar
 Summary:	2D Platform Game
 Version:	1.06
-Release:	1
+Release:	2
 Source:		%{name}-%{version}-%{rel}.tar.gz
 Url:		http://www.parallelrealities.co.uk/projects/edgar.php
 Group:		Games/Adventure
