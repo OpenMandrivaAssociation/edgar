@@ -1,20 +1,21 @@
-%define rel 2
-
 Name:		edgar
 Summary:	2D Platform Game
-Version:	1.06
-Release:	2
-Source:		%{name}-%{version}-%{rel}.tar.gz
-Url:		http://www.parallelrealities.co.uk/projects/edgar.php
+Version:	1.34
+Release:	1
+URL:		https://www.parallelrealities.co.uk/games/edgar/
+Source0:	https://github.com/riksweeney/edgar/releases/download/%{version}/%{name}-%{version}-1.tar.gz
 Group:		Games/Adventure
 License:	GPLv2
-Requires:	%{name}-data = %{version}
-BuildRequires:	SDL_image-devel
-BuildRequires:	SDL_mixer-devel
-BuildRequires:	SDL_net-devel
-BuildRequires:	SDL_ttf-devel
-BuildRequires:	zlib-devel
-BuildRequires:	desktop-file-utils
+
+BuildRequires:	gettext
+BuildRequires:	pkgconfig(libpng)
+BuildRequires:	pkgconfig(sdl2)
+BuildRequires:	pkgconfig(SDL2_image)
+BuildRequires:	pkgconfig(SDL2_mixer)
+BuildRequires:	pkgconfig(SDL2_ttf)
+BuildRequires:	pkgconfig(zlib)
+
+Requires:	%{name}-data >= %{version}
 
 %description
 The Legend of Edgar. When his father fails to return home after venturing out
@@ -34,29 +35,24 @@ out one stormy night, Edgar sets off on a quest to rescue him.
 This package contains official level set for Edgar.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-%make VERSION=%{version} RELEASE=%{rel}
+%set_build_flags
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name}
-desktop-file-install --dir %{buildroot}%{_datadir}/applications \
-	--remove-category=Application \
-	--add-category="AdventureGame" \
-	%{buildroot}%{_datadir}/applications/edgar.desktop
-
-rm -rf %{buildroot}%{_datadir}/doc
 
 %files -f %{name}.lang
-%doc doc/*
-%{_gamesbindir}/*
-%{_datadir}/applications/*.desktop
-%{_iconsdir}/hicolor/*/apps/*
+%{_gamesbindir}/%{name}
+%{_datadir}/appdata/%{name}.appdata.xml
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/icons/hicolor/*/apps/%{name}.png
+%{_docdir}/%{name}/
+%{_mandir}/man6/%{name}.6*
 
 %files data
-%dir %{_gamesdatadir}/%{name}
-%{_gamesdatadir}/%{name}/*
-
+%{_gamesdatadir}/%{name}/
