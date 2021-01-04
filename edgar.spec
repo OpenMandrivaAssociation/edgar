@@ -27,7 +27,6 @@ License:	GPLv2
 BuildArch:	noarch
 Summary:	The Legend of Edgar level set
 Requires:	%{name} = %{version}
-BuildArch:	noarch
 
 %description data
 The Legend of Edgar. When his father fails to return home after venturing
