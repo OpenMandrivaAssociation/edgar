@@ -3,7 +3,7 @@ Summary:	2D Platform Game
 Version:	1.35
 Release:	1
 URL:		https://www.parallelrealities.co.uk/games/edgar/
-Source0:	https://github.com/riksweeney/edgar/releases/download/%{version}/%{name}-%{version}.tar.gz
+Source0:	https://github.com/riksweeney/edgar/releases/download/%{version}/%{name}-%{version}-1.tar.gz
 Group:		Games/Adventure
 License:	GPLv2
 
