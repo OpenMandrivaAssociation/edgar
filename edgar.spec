@@ -1,6 +1,6 @@
 Name:		edgar
 Summary:	2D Platform Game
-Version:	1.35
+Version:	1.36
 Release:	1
 URL:		https://www.parallelrealities.co.uk/games/edgar/
 Source0:	https://github.com/riksweeney/edgar/releases/download/%{version}/%{name}-%{version}-1.tar.gz
