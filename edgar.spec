@@ -1,3 +1,4 @@
+%define _empty_manifest_terminate_build 0
 Name:		edgar
 Summary:	2D Platform Game
 Version:	1.37
