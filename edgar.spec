@@ -8,6 +8,7 @@ Source0:	https://github.com/riksweeney/edgar/releases/download/%{version}/%{name
 Group:		Games/Adventure
 License:	GPLv2
 
+BuildRequires:	make
 BuildRequires:	gettext
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(sdl2)
