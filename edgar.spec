@@ -1,7 +1,7 @@
 %define _empty_manifest_terminate_build 0
 Name:		edgar
 Summary:	2D Platform Game
-Version:	1.37
+Version:	1.38
 Release:	1
 URL:		https://www.parallelrealities.co.uk/games/edgar/
 Source0:	https://github.com/riksweeney/edgar/releases/download/%{version}/%{name}-%{version}-1.tar.gz
